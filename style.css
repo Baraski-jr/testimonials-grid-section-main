@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    --daniel-bg-clr: hsl(263, 55%, 52%);
+    --janathan-bg-clr: hsl(217, 19%, 35%);
+    --dark-bg-clr: hsl(219, 29%, 14%);
+    --white-bg-clr: hsl(0, 0%, 100%);
+
+    --jan-pic-border: hsl(263, 100%, 67%);
+
+    /* Text colors */
+    --light-text-clr: hsl(0, 0%, 81%);
+    --dark-text-clr: hsl(210, 46%, 95%);
+
+    /* Fonts */
+    --font-faminly: 'Barlow Semi Condensed', sans-serif;
+    --font-size: 13px;
+    --title-font-size: 2rem;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-faminly);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--light-text-clr);
+    padding: 2rem 1.5rem;
+    display: grid;
+    place-content: center;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+        " one "
+        " two "
+        " three "
+        " four "
+        " five ";
+
+}
+
+.daniel {
+    grid-area: one;
+    background-image: url('images/bg-pattern-quotation.svg');
+    background-position: calc(100% - 2rem) 0;
+    background-size: 8rem;
+    background-repeat: no-repeat;
+    background-color: var(--daniel-bg-clr);
+}
+
+.jonathan {
+    grid-area: two;
+    background-color: var(--janathan-bg-clr);
+
+}
+.Jeanette {
+
+    grid-area: three;
+    background-color: var(--white-bg-clr);
+}
+.Patrick {
+    grid-area: four;
+    background-color: var(--dark-bg-clr);
+}
+.Kira {
+    grid-area: five;
+    background-color: var(--white-bg-clr);
+}
+section {
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 5px var(--light-text-clr);
+    
+}
+.profile {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0;
+
+}
+.profile img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 5rem;
+}
+.username {
+    color: var(--light-text-clr);
+    margin-bottom: 5px;
+}
+.user__authentication {
+    color: var(--light-text-clr);
+    font-size: var(--font-size);
+    opacity: 0.5;
+}
+
+.title {
+
+    color: var(--light-text-clr);
+    padding: 0.5rem 0 1rem;
+    line-height: 1.8rem;
+    font-weight: 600;
+}
+
+.quote {
+
+    line-height: 1.5rem;
+    color: var(--light-text-clr);
+    opacity: .75;
+}
+
+/* Specification of styles */
+.pic-border {
+    border: 2px solid var(--jan-pic-border);
+}
+
+.Jeanette .profile figure figcaption .username {
+    border: 2px solid red;
+    color: var(--daniel-bg-clr);
+}
+.dark-text {
+    color: var(--dark-bg-clr);
+}
+
+@media screen and (min-width: 788px) {
+     
+    body {
+        /* height: 100vh; */
+        place-content: center;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: 
+            " one one two five"
+            " three four four five ";
+    }
+    .daniel {
+        grid-area: one;
+
+    }
+    .jonathan {
+        grid-area: two;
+
+    }
+    .Jeanette {
+        grid-area: three;
+
+    }
+    .Patrick {
+        grid-area: four;
+
+    }
+    .Kira {
+        grid-area: five;
+    }
+
+}
