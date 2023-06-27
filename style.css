@@ -15,9 +15,9 @@
     /* Fonts */
     --font-faminly: 'Barlow Semi Condensed', sans-serif;
     --font-size: 13px;
-    --title-font-size: 2rem;
 
 }
+
 
 * {
     margin: 0;
@@ -27,25 +27,20 @@
 }
 
 body {
-    min-height: 100vh;
-    background-color: var(--light-text-clr);
-    padding: 2rem 1.5rem;
+    background-color: var(--dark-text-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+main {
+    max-width: 70rem;
+    margin: auto;
     display: grid;
-    place-content: center;
     gap: 1.5rem;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, auto);
-    grid-template-areas: 
-        " one "
-        " two "
-        " three "
-        " four "
-        " five ";
-
 }
-
-.daniel {
-    grid-area: one;
+section:nth-child(1) {
     background-image: url('images/bg-pattern-quotation.svg');
     background-position: calc(100% - 2rem) 0;
     background-size: 8rem;
@@ -53,33 +48,30 @@ body {
     background-color: var(--daniel-bg-clr);
 }
 
-.jonathan {
-    grid-area: two;
+section:nth-child(2) {
     background-color: var(--janathan-bg-clr);
-
 }
-.Jeanette {
-
-    grid-area: three;
+section:nth-child(3) {
     background-color: var(--white-bg-clr);
 }
-.Patrick {
-    grid-area: four;
+section:nth-child(4) {
     background-color: var(--dark-bg-clr);
 }
-.Kira {
-    grid-area: five;
+section:nth-child(5) {
     background-color: var(--white-bg-clr);
 }
 section {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
     border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 0 5px var(--light-text-clr);
-    
+    padding: 1.5rem 1.5rem;
+    box-shadow: 0 0 5px var(--light-text-clr);   
+    overflow: hidden;
 }
 .profile {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     margin: 0.5rem 0;
 
 }
@@ -90,27 +82,27 @@ section {
 }
 .username {
     color: var(--light-text-clr);
-    margin-bottom: 5px;
+    font-size: var(--font-size);
+    margin-bottom: 2px;
 }
 .user__authentication {
     color: var(--light-text-clr);
     font-size: var(--font-size);
     opacity: 0.5;
+    font-size: var(--font-size);
 }
 
 .title {
-
     color: var(--light-text-clr);
-    padding: 0.5rem 0 1rem;
-    line-height: 1.8rem;
-    font-weight: 600;
-}
-
-.quote {
-
+    font-size: 1.2rem;
     line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+.quote {
+    line-height: 1.2rem;
     color: var(--light-text-clr);
     opacity: .75;
+    font-size: var(--font-size);
 }
 
 /* Specification of styles */
@@ -119,7 +111,6 @@ section {
 }
 
 .Jeanette .profile figure figcaption .username {
-    border: 2px solid red;
     color: var(--daniel-bg-clr);
 }
 .dark-text {
@@ -127,34 +118,61 @@ section {
 }
 
 @media screen and (min-width: 788px) {
-     
+
     body {
-        /* height: 100vh; */
-        place-content: center;
+        border: 2px solid red;
+        min-height: 100vh;
+    }
+    main {
+        max-width: 60rem;
+        display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, auto);
-        grid-template-areas: 
-            " one one two five"
-            " three four four five ";
+        grid-template-rows: repeat(2, min-max(17rem 1fr));
+        place-content: center;
+        grid-template-areas:
+            "one one two fifth"
+            "three four four fifth";
     }
-    .daniel {
+    section:nth-child(1) {
         grid-area: one;
-
     }
-    .jonathan {
+    section:nth-child(2) {
         grid-area: two;
-
     }
-    .Jeanette {
+    section:nth-child(3) {
         grid-area: three;
-
     }
-    .Patrick {
+    section:nth-child(4) {
         grid-area: four;
-
     }
-    .Kira {
-        grid-area: five;
+    section:nth-child(5) {
+        grid-area: fifth;
     }
-
+    .profile img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 5rem;
+    }
+    .username {
+        color: var(--light-text-clr);
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+    .user__authentication {
+        color: var(--light-text-clr);
+        font-size: var(--font-size);
+        opacity: 0.5;
+        font-size: 12px;
+    }
+    .title {
+        font-size: 16px;
+        line-height: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .quote {
+        line-height: 1.2rem;
+        font-size: 13px;
+    }
+    
+     
 }
